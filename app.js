@@ -39,7 +39,8 @@ app.get('/turing', function(req,res) {
     res.sendFile(path.join(__dirname, 'DH-Heroes/views/turing.html'));
 });
 
-app.use(express.static('public'));
+
+app.use('/static', express.static(__dirname + '/Public'));
 
 app.listen(3030,() => console.log('Servidor corriendo'));
 
