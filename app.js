@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+app.use('/static', express.static('Public'));
 
 app.get('/', function(req, res) {
     res.send('¡Bienvenido!');
@@ -40,7 +41,6 @@ app.get('/turing', function(req,res) {
 });
 
 
-app.use('/static', express.static(__dirname + '/Public'));
 
 app.listen(3030,() => console.log('Servidor corriendo'));
 
