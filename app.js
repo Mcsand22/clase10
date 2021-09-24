@@ -3,13 +3,12 @@ const app = express();
 const path = require('path');
 
 
-app.use(express.static('Public/img'));
+app.use("/static", express.static("Public"));
 
 app.get('/', function(req, res) {
     res.send('¡Bienvenido!');
 });
 
-app.listen(3030,() => console.log('Servidor corriendo'));
 
 app.get('/babbage', function(req,res) {
     res.sendFile(path.join(__dirname, 'DH-Heroes/views/babbage.html'));
@@ -43,6 +42,7 @@ app.get('/turing', function(req,res) {
     res.sendFile(path.join(__dirname, 'DH-Heroes/views/turing.html'));
 });
 
+app.listen(3030,() => console.log('Servidor corriendo'));
 
 
 
