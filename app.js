@@ -2,11 +2,14 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-app.use('/static', express.static('Public'));
+
+app.use(express.static('Public/img'));
 
 app.get('/', function(req, res) {
     res.send('¡Bienvenido!');
 });
+
+app.listen(3030,() => console.log('Servidor corriendo'));
 
 app.get('/babbage', function(req,res) {
     res.sendFile(path.join(__dirname, 'DH-Heroes/views/babbage.html'));
@@ -42,7 +45,6 @@ app.get('/turing', function(req,res) {
 
 
 
-app.listen(3030,() => console.log('Servidor corriendo'));
 
 /// -> Debe direccionar al recurso index.html.
 /*● /babbage -> Debe direccionar al recurso babbage.html
