@@ -47,4 +47,4 @@ app.get('/turing', function(req, res) {
     res.sendFile(path.join(__dirname, 'views/turing.html'));
 });
 
-app.listen(3030, () => console.log('Servidor corriendo'));
+app.listen(3030, () => console.log('Servidor corriendo en el puerto 3030'));
