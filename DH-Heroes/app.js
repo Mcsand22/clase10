@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 
 
+
 app.use('/static', express.static("public"));
 
 app.get('/home', function(req, res) {
